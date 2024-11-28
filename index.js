@@ -1,7 +1,8 @@
 const express=require("express");
-const DB = require("./db");
 const student = require("./Student.Model");
+const dbconnect = require("./db");
 const app=express()
+app.use(express.json())
 
 app.get("/student",async(req,res)=>{
   const data=await student.find()
@@ -31,6 +32,6 @@ app.delete("student/:id",async(req,res)=>{
   res.send(data)
 })
 app.listen(8090,()=>{
-  console.log("listing on http://localhost:8090",DB);
-  
+  console.log("listing on http://localhost:8090")
+  dbconnect()
 })

@@ -1,6 +1,8 @@
 
 const mongoose=require("mongoose")
-const DB=async()=>{
-  await mongoose.connection("mongodb+srv://hastipaladiya2001:abcd12345@cluster0.dv3mi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+const dbconnect=async()=>{
+  await mongoose.connect("mongodb+srv://hastipaladiya2001:data1234@cluster0.fks9n.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+  console.log("CONNEctes mongoose db");
+  
 }
-module.exports=DB
+module.exports=dbconnect
